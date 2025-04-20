@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StealCircle</title>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet" />
+    <style>
+      #searchInput {
+        margin-bottom: 2rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      h3 {
+        margin-top: 2rem;
+      }
+      ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+      }
+      nav { display: none; }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="grid">
+        <section>
+          <h1>StealCircle</h1>
+
+          <input type="search" id="searchInput" placeholder="Pl. DS, Grail, Raffle..." aria-label="Keresés">
+
+          <div id="glossary">
+            <h3>🔹 Állapotmegjelölések (használt cipők)</h3>
+            <ul>
+              <li><strong>DS (Deadstock)</strong> – Teljesen új állapot.</li>
+              <li><strong>DSWT (Deadstock With Tag)</strong> – Új, tag is rajta van.</li>
+              <li><strong>VNDS (Very Near Deadstock)</strong> – Alig hordott, szinte újszerű.</li>
+              <li><strong>PADS (Pass As Deadstock)</strong> – Hordott, de kinézetre DS.</li>
+              <li><strong>Worn once / Tried on</strong> – Egyszer hordott vagy csak próbálva volt.</li>
+              <li><strong>Lightly worn</strong> – Párszor hordott, megkímélt.</li>
+              <li><strong>Worn with care</strong> – Hordott, de óvatosan, jó állapotú.</li>
+              <li><strong>9/10, 8/10 stb.</strong> – Állapotskála 10-es rendszerben.</li>
+              <li><strong>No flaws</strong> – Hiba nélküli, de nem új.</li>
+              <li><strong>Beater</strong> – Erősen használt, de még hordható.</li>
+              <li><strong>Crease</strong> – Gyűrődés, főleg a toe boxon.</li>
+              <li><strong>Heeldrag</strong> – A sarok kopott.</li>
+              <li><strong>Restored</strong> – Helyreállított, pl. újrafestve.</li>
+              <li><strong>OG all</strong> – Minden eredeti tartozék megvan.</li>
+              <li><strong>Without OG box / OG NONE</strong> – Nincs meg az eredeti doboz vagy más tartozék.</li>
+            </ul>
+
+            <h3>🔹 Kereskedéshez használt rövidítések</h3>
+            <ul>
+              <li><strong>WTS (Want To Sell)</strong> – Eladó.</li>
+              <li><strong>WTB (Want To Buy)</strong> – Keresem.</li>
+              <li><strong>WTT (Want To Trade)</strong> – Cserélném.</li>
+              <li><strong>PC (Price Check)</strong> – A cipő reális árának megállapítása.</li>
+              <li><strong>OBO (Or Best Offer)</strong> – Legjobb ajánlatot elfogadom.</li>
+              <li><strong>H/O (Highest Offer)</strong> – Jelenlegi legmagasabb ajánlat.</li>
+              <li><strong>Fair price</strong> – Korrekt ár.</li>
+              <li><strong>Steal</strong> – Nagyon jó ár, piaci ár alatt.</li>
+              <li><strong>Lowball</strong> – Irreálisan alacsony ajánlat.</li>
+              <li><strong>No lowballing</strong> – Csak komoly ajánlatokat várok.</li>
+              <li><strong>BULK</strong> – Nagy tételben venni, jobb ár érdekében.</li>
+            </ul>
+
+            <h3>🔹 Méret, illeszkedés, állapotértékelés</h3>
+            <ul>
+              <li><strong>TTS (True To Size)</strong> – Méretezés pontos, megszokott méret ajánlott.</li>
+              <li><strong>JDG (Judge Yourself)</strong> – Az állapotot a képek alapján te döntsd el.</li>
+            </ul>
+
+            <h3>🔹 Modellek, kiadások, collabok</h3>
+            <ul>
+              <li><strong>CW (Colorway)</strong> – Színállás (pl. “Bred” vagy “Panda”).</li>
+              <li><strong>GR (General Release)</strong> – Általános, nem limitált megjelenés.</li>
+              <li><strong>Collab / Kollab</strong> – Együttműködés (pl. Travis x Nike).</li>
+              <li><strong>F&F (Friends & Family)</strong> – Privát, nagyon limitált megjelenés.</li>
+              <li><strong>Grail</strong> – A személyes "grál", álomcipő.</li>
+              <li><strong>Heater / HEAT</strong> – Nagy hype, sok embernek kell.</li>
+              <li><strong>Sample</strong> – Mintadarab, nem hivatalos megjelenés.</li>
+            </ul>
+
+            <h3>🔹 Pickup / szerzés, beszerzés</h3>
+            <ul>
+              <li><strong>LPU (Latest Pickup)</strong> – Legutóbbi szerzemény.</li>
+              <li><strong>W (Win)</strong> – Sikeres raffle vagy vásárlás.</li>
+              <li><strong>L (Loss)</strong> – Kudarc, pl. SNKRS-ben.</li>
+              <li><strong>Bot / Botting</strong> – Automatizált vásárlás (raffle, drop esetén).</li>
+            </ul>
+
+            <h3>🔹 Piaci mozgás, eladási stratégia</h3>
+            <ul>
+              <li><strong>Brick</strong> – Nem keresett termék, nehéz eladás.</li>
+              <li><strong>Hyped</strong> – Nagyon keresett, trendi.</li>
+              <li><strong>Quickflip</strong> – Azonnali eladás.</li>
+              <li><strong>Hold</strong> – Tartani a cipőt befektetésként a későbbi magasabb ár reményében.</li>
+              <li><strong>Market is down/up</strong> – A piac épp zuhan vagy nő.</li>
+              <li><strong>OP (Overpriced)</strong> – Túlárazott, irreálisan drága.</li>
+            </ul>
+
+            <h3>🔹 Dropok, hozzáférések, értékesítés módja</h3>
+            <ul>
+              <li><strong>EA (Exclusive Access)</strong> – Privát hozzáférés (pl. SNKRS-nél).</li>
+              <li><strong>Raffle sorsolás</strong> – Regisztrációs vásárlási lehetőség.</li>
+              <li><strong>FCFS (First Come First Served)</strong> – Aki előbb fizet, azé.</li>
+              <li><strong>Restock</strong> – Újra elérhető modell.</li>
+              <li><strong>SKU (Stock Keeping Unit)</strong> – Termék cikkszáma.</li>
+            </ul>
+
+            <h3>🔹 Social / közösségi szleng</h3>
+            <ul>
+              <li><strong>On feet</strong> – Cipő a lábon, outfites fotó.</li>
+              <li><strong>Fit pic / Fit check</strong> – Cipő + ruha kombó fotó.</li>
+              <li><strong>Shelf pair</strong> – Vitrinbe való, nem hordott cipő.</li>
+              <li><strong>Callout / CO</strong> – Felhívás arra, hogy valaki scammer, csaló.</li>
+              <li><strong>LC (Legit Check)</strong> – Eredetiség ellenőrzése.</li>
+              <li><strong>Ref-ek / Trusted seller</strong> – Korábbi visszajelzések, megbízható eladó.</li>
+              <li><strong>GL / GLWS</strong> – Sok sikert (az eladáshoz).</li>
+              <li><strong>BUMP (Bring Up My Post)</strong> – Poszt fenntartása a nagyobb elérésért.</li>
+            </ul>
+          </div>
+
+          <script>
+            const searchInput = document.getElementById('searchInput');
+            const allItems = document.querySelectorAll('#glossary li');
+
+            searchInput.addEventListener('input', function () {
+              const value = searchInput.value.toLowerCase();
+              allItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(value) ? '' : 'none';
+              });
+            });
+          </script>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
